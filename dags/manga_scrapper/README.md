@@ -1,88 +1,112 @@
-# Manga Scraper Project
+# 📖 Manga Scraper 🚀
 
-This project scrapes manga data (image URLs) from a manga website and stores the images in an organized folder structure. The manga data is stored in an SQLite database, and images are downloaded and saved using Python scripts.
+## 📌 Overview
 
-## Project Structure
-```
+Manga Scraper is a fully automated web scraping project designed to extract manga data from online sources. It utilizes **Apache Airflow** for task scheduling and **Docker** for easy deployment. This project simplifies the process of downloading and organizing manga chapters into structured formats.
 
-├── Scrapper.ipynb                  # Jupyter notebook for scraping manga data
-├── StoreImages.ipynb               # Jupyter notebook for storing images
-├── manga_data.db                   # SQLite database storing manga data (name, chapter, image URLs)
-├── manga_scrapper.py               # Python script to scrape manga data (single-threaded)
-├── manga_scrapper_concurrent.py    # Python script to scrape manga data (multi-threaded)
-├── sample.csv                      # Example CSV file with manga data (optional)
-├── store_images.py                 # Python script to download and store images
-└── structure.png                   # Visual representation of folder structure (optional)
+## 📸 Screenshots / Demo
+
+🖼️ Add your project screenshots or demo here!
 
 ```
-
-
-## Features
-- Download chapters as images or in bulk.
-- Easy-to-use command line interface.
-- Flexible and customizable to suit your needs.
-
-## Installation and Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Ajay1812/manga-scrapper.git
-   cd manga-scrapper
-
-2. **Create a Python virtual environment:** To create a virtual environment, use the following command:
-
-#### Requirements
-
-```
-   pip install -r requirement.txt
-```  
-
-### Usage : Scraping Manga Data
-1. Open Scrapper.ipynb in a Jupyter Notebook environment and run the cells to scrape manga data from the web.
-
-2. Alternatively, you can use the following Python scripts to scrape manga data:
-
-- manga_scrapper.py: A single-threaded version for scraping manga data.
-- manga_scrapper_concurrent.py: A multi-threaded version for faster scraping.
-To run either script:
-
+![Airflow UI](path_to_screenshot1.png)
+![Scraped Manga Data](path_to_screenshot2.png)
 ```
 
-python manga_scrapper.py
-# or
-python manga_scrapper_concurrent.py
+## ✨ Features
 
+✅ Automated manga extraction 📜  
+✅ Apache Airflow for task scheduling ⏳  
+✅ Docker containerization for seamless deployment 🐳  
+✅ Scalable and customizable workflow ⚙️
+
+## 🔧 Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- [🐳 Docker](https://www.docker.com/)
+- [🛠️ Docker Compose](https://docs.docker.com/compose/)
+- [💨 Apache Airflow](https://airflow.apache.org/)
+- 🐍 Python 3.8+
+
+## 🚀 Installation & Setup
+
+1️⃣ Clone the repository:
+
+```sh
+git clone https://github.com/Ajay1812/airflow-docker-projects.git
+cd airflow-docker-projects
 ```
 
-### Storing Images
-1. Open StoreImages.ipynb in a Jupyter Notebook and run the cells to download and store manga images in the folder structure.
+2️⃣ Build and start the Docker containers:
 
-2. Alternatively, you can run the store_images.py script to download images for all manga stored in the database:
-
-```
-python store_images.py
+```sh
+docker-compose up --build -d
 ```
 
-### Folder Structure for Images
-Images for each manga and chapter will be stored in a folder structure like:
+3️⃣ To check running containers::
 
+```sh
+docker ps
 ```
 
-stored_manga/
-    Naruto/
-        chapter_001/
-            naruto_ch001_001.jpg
-            naruto_ch001_002.jpg
-            ...
-        chapter_002/
-            ...
-    OnePiece/
-        chapter_001/
-            ...
+4️⃣ To check the logs:
 
+```sh
+docker logs <CONTAINER-ID>
 ```
 
-Each manga (e.g., Naruto, OnePiece) will have its folder, and inside each manga folder, each chapter will have its own subfolder.
+5️⃣ Access the Airflow UI:
 
-### Example Data
-Sample data for manga is stored in manga_data.db. You can also use the sample.csv to import data or create your own.
+- Open [🌐 http://localhost:8080](http://localhost:8080) in your browser.
+- Use default credentials (`airflow`/`airflow`).
+
+6️⃣ To stop and remove all volumes:
+
+```sh
+docker compose down -v
+```
+
+## 🎮 How to Use
+
+1. Navigate to the **Airflow UI** and trigger the `manga_scraper` DAG.
+2. Wait for the pipeline to fetch, process, and store manga data.
+3. Scraped manga will be available in structured format in the `data/` directory.
+
+## 📁 Project Structure
+
+```
+airflow-docker-projects/
+├── dags/
+│   └── ETL_manga_data.py    # Airflow DAG definition for scraping manga data
+├── data/                    # Data folder to persist scraped manga
+│   ├── stored_manga/
+│   │   ├── pdfs/
+│   │   │   ├── solo_leveling/
+│   │   │       ├── chapter_1.pdf
+│   │   │       ├── chapter_2.pdf
+│   │   │       ├── ...
+│   │   │       ├── chapter_30.pdf
+│   │   ├── solo_leveling/
+│   │       ├── chapter_1/
+│   │       │   ├── 01.jpg
+│   │       │   ├── 02.jpg
+│   │       │   ├── ...
+│   │       │   ├── 30.jpg
+│   │       ├── chapter_2/
+│   │       │   ├── 01.jpg
+│   │       │   ├── 02.jpg
+│   │       │   ├── ...
+│   │       │   ├── 30.jpg
+│   ├── manga_data.db
+├── docker-compose.yml       # Docker Compose configuration for Airflow and volume mounts
+└── README.md                # Project documentation
+```
+
+## 🤝 Contributing
+
+Want to improve this project? Feel free to submit issues or pull requests! 💡
+
+## 📬 Contact
+
+For any queries, reach out to [Ajay1812](https://github.com/Ajay1812). 🚀
