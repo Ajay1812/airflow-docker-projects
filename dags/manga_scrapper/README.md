@@ -10,10 +10,6 @@ Manga Scraper is a fully automated web scraping project designed to extract mang
 --- 
 ![manga_extract](https://github.com/user-attachments/assets/21508e62-18d8-4893-bf2a-45f9fad1d87a)
 ---
-![download_manga_images](https://github.com/user-attachments/assets/0c856779-a2b0-44bb-a4bd-2db9b832c93b)
----
-![convert_images_pdf](https://github.com/user-attachments/assets/b437efe2-c788-4043-a849-7aa4c2d57fcd)
-
 
 ## ✨ Features
 
