@@ -1,6 +1,6 @@
 input_manga_details = {
     "manga" : ["solo leveling"],
-    "Chapter_range" : [30,40],
+    "Chapter_range" : [1,10],
     "manga_data_path" : "/opt/airflow/data/manga_data"
     }
 
