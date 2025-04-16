@@ -29,7 +29,7 @@ def download_image(image_url, chapter_folder):
         print(f"Failed to download {image_url}: {e}")
 
 def process_chapter(manga_name, chapter, image_urls):
-    stored_manga_folder = os.path.join(f"{input_manga_details["manga_data_path"]}/stored_manga")
+    stored_manga_folder = os.path.join(f"{input_manga_details['manga_data_path']}/stored_manga")
     os.makedirs(stored_manga_folder, exist_ok=True)
 
     manga_folder = os.path.join(stored_manga_folder, manga_name)

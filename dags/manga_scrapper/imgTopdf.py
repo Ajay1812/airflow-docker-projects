@@ -37,8 +37,8 @@ def convert_manga_to_pdf(manga_dir, output_dir):
             print(f"No images found in {chapter_path}, skipping...")
 
 def final_convert_to_pdf():
-    base_dir = f"{input_manga_details["manga_data_path"]}/stored_manga/"
-    pdf_output_dir = f"{input_manga_details["manga_data_path"]}/stored_manga/pdfs/"
+    base_dir = f"{input_manga_details['manga_data_path']}/stored_manga/"
+    pdf_output_dir = f"{input_manga_details['manga_data_path']}/stored_manga/pdfs/"
 
     for manga in sorted(os.listdir(base_dir)):
         manga_path = os.path.join(base_dir, manga)

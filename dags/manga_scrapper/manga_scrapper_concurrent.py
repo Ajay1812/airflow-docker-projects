@@ -51,7 +51,8 @@ def main():
     # chapter_range = manga_names['Chapter_range']
     start, end = input_manga_details['Chapter_range']
 
-    conn = sqlite3.connect(f'{input_manga_details['manga_data_path']}/manga_data.db', check_same_thread=False)
+    conn = sqlite3.connect(f"{input_manga_details['manga_data_path']}/manga_data.db", check_same_thread=False)
+    # conn = sqlite3.connect(f'{input_manga_details['manga_data_path']}/manga_data.db', check_same_thread=False)
     global cursor
     cursor = conn.cursor()
 
